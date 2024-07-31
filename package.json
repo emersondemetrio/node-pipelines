@@ -1,0 +1,14 @@
+{
+	"name": "node-pipelines",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:emersondemetrio/node-pipelines.git",
+	"author": "Emerson Demetrio <emer.demetrio@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node pipeline.js",
+		"dev": "nodemon index.js",
+		"bootstrap": "./scripts/create-large-file.sh",
+		"clean": "./scripts/clean-up.sh"
+	}
+}
