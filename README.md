@@ -2,6 +2,26 @@
 
 Experimenting with node [pipelines](https://www.geeksforgeeks.org/node-js-stream-pipeline-method/) and read/write streams.
 
+## Some results
+
+```bash
+
+# Processing a csv file with 100.000 lines
+
+➜  node-pipelines git:(main) yarn bootstrap 100000
+yarn run v1.22.22
+$ ./scripts/create-large-file.sh 100000
+Creating a file with 100000 lines...
+
+Lines created:   100000
+✨  Done in 0.63s.
+
+
+➜  node-pipelines git:(main) ✗ time node pipeline.js
+Pipeline succeeded
+node pipeline.js  0.10s user 0.02s system 100% cpu 0.125 total
+```
+
 ## How to:
 
 Create a large file:
