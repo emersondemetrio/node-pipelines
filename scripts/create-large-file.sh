@@ -6,14 +6,13 @@ if [ $# -ne 1 ]; then
 fi
 
 line="This is a line in a large file."
-printf "Creating a file with %d lines\n" $N
+printf "Creating a file with %d lines...\n" $N
 rm -f data/large-file.txt
-for ((i = 1; i <= N; i++)); do
-    echo "$line $i" >>data/large-file.txt
-
-    percentage=$((100 * i / N))
-    printf "\rLine %d of %d (%d%%)" $i $N $percentage
-done
+{
+    for ((i = 1; i <= N; i++)); do
+        echo "$line $i"
+    done
+} >data/large-file.txt
 
 LC=$(cat data/large-file.txt | wc -l)
 echo
